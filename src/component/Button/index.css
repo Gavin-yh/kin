@@ -1,0 +1,43 @@
+.btn{
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.btn-lg{
+    padding: 10px 15px;
+}
+
+.btn-sm{
+    padding: 5px 10px;
+}
+
+.btn-primary{
+    background: var(--btn-primary);
+}
+
+.btn-danger{
+    background: var(--btn-danger);
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.btn:hover{
+    opacity: .8;
+}
+
+.btn-default:hover{
+    color: var(--btn-default_hover);
+    border-color: var(--btn-default_hover);
+}
+
+.btn-default{
+    border: 1px solid var(--btn-default_border);
+    background: var(--btn-default);
+}
+
