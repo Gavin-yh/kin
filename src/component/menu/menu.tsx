@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import './menu.css'
+import { MenuItemProps } from './menuItem'
 
 type ModeType = 'horizon' | 'vertical' // 联合类型  字符串字面量： string litera types
 
-type OnSelectType = (index:number, children?: React.ReactNode) => void
+type OnSelectType = (index: number, children?: React.ReactNode) => void
 
 export interface MenuProps {
     activeIndex?: number;
@@ -19,7 +20,7 @@ interface MenuContextToItem {
     onSelect?: OnSelectType;
 }
 
-export const MenuContext = React.createContext<MenuContextToItem>({index: 0})
+export const MenuContext = React.createContext<MenuContextToItem>({ index: 0 })
 
 const Menu: React.FC<MenuProps> = (props) => {
     const {
@@ -50,10 +51,22 @@ const Menu: React.FC<MenuProps> = (props) => {
         onSelect: handlerClick,
     }
 
+    const renderChildren = () => {
+        return React.Children.map(children, (child, index) => {
+            const childEle = child as React.FunctionComponentElement<MenuItemProps>
+            const { displayName } = childEle.type
+            if(displayName === 'MenuItem') {
+                return child
+            }else{
+                console.warn('Menu children must be MenuItem')
+            }
+        })
+    }
+
     return (
         <ul className={classList} style={style}>
-            <MenuContext.Provider value={ middleContext }>
-                {children}
+            <MenuContext.Provider value={middleContext}>
+                { renderChildren() }
             </MenuContext.Provider>
         </ul>
     )
