@@ -8,5 +8,28 @@
 * normalize.css
 * classnames(@types/classnames)
 
+#### interface的妙用
+```
+Button
+
+interface ButtonProps {
+  className?: string;
+  disabled?: boolean
+  size?: ButtonSize;
+  btnType?: ButtonType;
+  children?: React.ReactNode;
+  href?: string;
+}
+
+Menu
+
+export interface MenuProps {
+    activeIndex?: number;
+    className?: string;
+    style?: React.CSSProperties;
+    mode?: ModeType;
+    onSelect?: OnSelectType;
+}
+```
 
 ##### 待续。。。。。
