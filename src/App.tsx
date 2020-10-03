@@ -14,13 +14,13 @@ function App() {
 
       <Menu
       >
-        <MenuItem index={0}>
+        <MenuItem>
           gavin 1
         </MenuItem >
-        <MenuItem index={1}>
+        <MenuItem>
           gavin 2
         </MenuItem>
-        <MenuItem index ={2}>
+        <MenuItem >
           gavin 3
         </MenuItem>
       </Menu>
