@@ -5,7 +5,7 @@ import { warn } from '../../common'
 
 export enum ButtonSize {
   Large = 'lg',
-  Small = 'sm'
+  Small = 'sm',
 }
 
 export enum ButtonType {
@@ -16,12 +16,12 @@ export enum ButtonType {
 }  
 
 interface ButtonProps {
-  className?: string,
-  disabled?: boolean,
-  size?: ButtonSize,
-  btnType?: ButtonType,
-  children?: React.ReactNode,
-  href?: string,
+  className?: string;
+  disabled?: boolean
+  size?: ButtonSize;
+  btnType?: ButtonType;
+  children?: React.ReactNode;
+  href?: string;
 }
 
 

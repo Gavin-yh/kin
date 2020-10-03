@@ -1,5 +1,7 @@
 import React from 'react';
 import Button, {ButtonType, ButtonSize} from './component/Button/index'
+import Menu from './component/menu/menu'
+import MenuItem  from './component/menu/menuItem'
 
 function App() {
   return (
@@ -10,23 +12,18 @@ function App() {
         className='gavin'
       >确定 </Button>
 
-      <Button
-        btnType={ButtonType.Primary}
-        size={ButtonSize.Small}
-        className='gavin'
-      >确定</Button>
-
-      <Button
-        btnType={ButtonType.Danger}
-        size={ButtonSize.Large}
-        className='gavin'
-      >确定</Button>
-
-      <Button
-        btnType={ButtonType.Default}
-        size={ButtonSize.Large}
-        className='gavin'
-      >确定</Button>
+      <Menu
+      >
+        <MenuItem>
+          gavin 1
+        </MenuItem>
+        <MenuItem>
+          gavin 2
+        </MenuItem>
+        <MenuItem>
+          gavin 3
+        </MenuItem>
+      </Menu>
     </div>
   );
 }
